@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>연습</h1>
+    <h2>배경 글자바꾸기</h2>
+    <input type="button" value="초록" onclick="
+      var target = document.body.style;
+      if(this.value === '초록'){
+        target.backgroundColor = 'green';
+        target.color = 'yellow';
+        this.value = '복귀';
+      } else {
+        target.backgroundColor = 'white';
+        target.color = 'black';
+        this.value = '초록';
+      }
+    ">
+  </body>
+</html>
