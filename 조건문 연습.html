@@ -19,5 +19,21 @@
         this.value = '초록';
       }
     ">
+
+
+    <h2>배열, 반복문</h2>
+    <ul>
+    <script>
+        var linka = ["ROUTINE", "NUTRITION", "BODY", "1RM"];
+        var i = 0;
+        while(i < linka.length) {
+          document.write('<li><a href = "'+linka[i]+'.html">'+linka[i]+'</li>');
+          var alist = document.querySelectorAll('a');
+          alist[i].style.textDecoration = 'none';
+          i = i+1;
+        }
+
+    </script>
+    </ul>
   </body>
 </html>
