@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>연습</h1>
+    <h2>배경 글자바꾸기</h2>
+    <input type="button" value="초록" onclick="
+      var target = document.body.style;
+      if(this.value === '초록'){
+        target.backgroundColor = 'green';
+        target.color = 'yellow';
+        this.value = '복귀';
+      } else {
+        target.backgroundColor = 'white';
+        target.color = 'black';
+        this.value = '초록';
+      }
+    ">
+
+
+    <h2>배열, 반복문</h2>
+    <ul>
+    <script>
+        var linka = ["ROUTINE", "NUTRITION", "BODY", "1RM"];
+        var i = 0;
+        while(i < linka.length) {
+          document.write('<li style="list-style-type:none"><a href="'+linka[i]+'.html">'+linka[i]+'</a></li>');
+          i = i + 1;
+        }
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+          alist[i].style.textDecoration = 'none';
+          i = i+1;
+        }
+    </script>
+    </ul>
+
+    <h2>함수</h2>
+    <script>
+    function murtiple(one,two){
+      return one*two;
+    }
+    document.write(murtiple(9,8));
+    </script>
+  </body>
+</html>
