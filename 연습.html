@@ -44,7 +44,38 @@
     function murtiple(one,two){
       return one*two;
     }
+    function plus(one,two){
+      return one+two;
+    }
+    function minus(one,two){
+      return one-two;
+    }
+    function divide(one, two){
+      return one/two;
+    }
     document.write(murtiple(9,8));
+    </script>
+
+    <h2>객체</h2>
+    <script>
+    var calculation = {
+      murtiple:function(one,two){
+        return one*two;
+      },
+      plus:function(one,two){
+        return one+two;
+      },
+      minus:function(one,two){
+        return one-two;
+      },
+      divide:function(one, two){
+        return one/two;
+      }
+    }
+    document.write(calculation.murtiple(2,3)+'<br>');
+    document.write(calculation.plus(2,3)+'<br>');
+    document.write(calculation.minus(2,3)+'<br>');
+    document.write(calculation.divide(3,1)+'<br>');
     </script>
   </body>
 </html>
