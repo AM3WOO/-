@@ -37,3 +37,24 @@ array.clear() #모두 제거
 array = [1,2,3,4,5]
 for element in array: #element라는 변수에 array가 들어감
     print(element) #차례로 반복
+
+#dictionary
+dict_a = {"a": "b"} #선언, 중괄호, ("a"는 키, "b"는 값)
+dict_a["a"] #사용, 대괄호
+dict_a["a"] = "ab" #값 변경
+dict_a["c"] = "abc" #추가
+del dict_a["c"] #제거
+
+#dictionary 내부에 키가 있는 확인하기
+dictionary = {"a":"a", "b":"b", "c":"c"}
+key = input(">키를 입력하시오: ")
+if key in dictionary: #in울 통해 확인
+    print(dictionary[key])
+
+#get()함수
+value = dictionary.get("d")
+print(value) #None
+
+#dictionary + for반복문
+for dict_key in dictionary: #dict_key는 키의 변수                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+    print(dict_key, ":", dictionary[dict_key])
