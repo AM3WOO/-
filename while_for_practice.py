@@ -58,3 +58,43 @@ print(value) #None
 #dictionary + for반복문
 for dict_key in dictionary: #dict_key는 키의 변수                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
     print(dict_key, ":", dictionary[dict_key])
+
+#range
+a = range(5) #선언, range(0,5)
+n=10    
+range(n/2) #error, 매개변수는 반드시 정수
+range(n//2) #정수나누기 연산자 가능
+
+#for(range)
+for i in range(5):
+    print(i) #0,1,2,3,4
+
+
+#역반복문
+for i in range(4,0-1,-1):
+    print(i) #4,3,2,1,0
+
+for i in reversed(range(5)): #reversed()
+    print(i) #4,3,2,1,0
+
+#while
+list = [1,2,1,2]
+value = 2
+while value in list: #True일때
+    list.remove(value) #반복
+
+#break, continue
+    i = 0
+    while True: #무한반복
+        print("{}번재 반복문입니다.".format(i))
+        i += 1
+        input_a = input(">종료하시겠습니까?(y/n): ")
+        if input_a in ["y", "Y"]:
+            print("반복을 종료합니다")
+            break #반복종료
+        
+    numbers = [5,1231,21,321,2]
+    for number in numbers:
+        if number<10: 
+            continue #반복생략
+        print(number) #1231, 21, 321
