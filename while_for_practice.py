@@ -1,8 +1,8 @@
 
 #list
 array = [273, 32, 13, "문자", True, False] #element(요소) 
-list = [[1,2,3], [4,5,6], [7,8,9]]
-print(list[0]) #[1,2,3]
+list_a = [[1,2,3], [4,5,6], [7,8,9]]
+print(list_a[0]) #[1,2,3]
 
 #list_index
 print(array[0]) #273
@@ -12,7 +12,7 @@ print(array)
 print(array[3][0]) #문
 
 #list연산자
-print(array + list)
+print(array + list_a)
 print(len(array)) #6
 
 #list에 요소추가 (파괴적=원본에변화)
@@ -28,8 +28,8 @@ del array[0] #index로 제거
 print(array)
 array.pop(0) #index로 제거
 print(array)
-array.remove("문자")
-print(array) #값으로 제거
+array.remove("문자") #값으로 제거
+print(array) 
 "문자" in array #False
 array.clear() #모두 제거
 
@@ -78,10 +78,10 @@ for i in reversed(range(5)): #reversed()
     print(i) #4,3,2,1,0
 
 #while
-list = [1,2,1,2]
+list_a = [1,2,1,2]
 value = 2
-while value in list: #True일때
-    list.remove(value) #반복
+while value in list_a: #True일때
+    list_a.remove(value) #반복
 
 #break, continue
     i = 0
@@ -98,3 +98,48 @@ while value in list: #True일때
         if number<10: 
             continue #반복생략
         print(number) #1231, 21, 321
+
+#reversed()
+list_a = [1,2,3,4,5]
+list_reversed = reversed(list_a) 
+print(list(list_reversed)) #list()로 강제변환, 이터레이터이기 때문
+for i in reversed(list_a): #필요한 시점에 reversed()사용
+    print(i)
+list_a[::-1] #확장슬라이싱, reversed()와 같은 기능이지만, 비파괴적
+
+#enumerate() +list
+example_list = ["요소A", "요소B", "요소C"]
+print(list(enumerate(example_list))) #[(0, '요소A'), (1, '요소B'), (2, '요소C')] #튜플 
+for i, value in enumerate(example_list): #반복변수 2개
+    print("{}번째 요소는 {}입니다.".format(i, value)) #첫번째{}엔 index, 두번째{}엔 element
+
+#item() +dictionary
+example_dicitonary = {
+    "키A" : "값A",
+    "키B" : "값B",
+    "키C" : "값C"}
+for key,element in example_dicitonary.items():
+    print("dictionary[{}] = {}".format(key,element)) #첫번째{}엔 key, 두번째{}엔 element
+
+#리스트 내포 
+array = [i*i for i in range(0,20,2)] #리스트이름 = [표현식 for 반복자 in 반복할수있는것]
+array = ["사과", "자두", "초콜릿", "바나나", "체리"]
+output = [fruit for fruit in array if fruit != "초콜릿"] #[표현식 for 반복자 in 반복할수있는것 if조건문], !=은 "같음을 확인하는 비교연산자" 
+
+#괄호로 문자열 연결하기
+test = (
+    "가"
+    "나"
+    "다") #가나다
+
+#join()으로 문자열 연결하기
+"::".join(["1","2","3","4"]) #1::2::3::4, 문자열.join(문자열로 구성된 리스트)
+
+#next()
+numbers = [1,2,3,4,5,6]
+r_num = reversed(numbers)
+print(r_num) #오류
+print(next(r_num)) #6,
+    #이터러블 : 요소들을 차례차례 꺼낼 수 있는 객체 (리스트,딕셔너리 등)
+    #이터레이터 : 이터러블 중 next()함수로 꺼낼 수 있는 요소
+    #reversed()함수의 리턴값은 이터레이터 -> next()를 이용해서 꺼내야 함
